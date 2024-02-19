@@ -147,7 +147,7 @@ func insert(id int, query string, db *sql.DB, callback chan<- int, conns *int, c
 	concorrencia.Done()
 }
 
-// finaliza tudo
+// finaliza
 func conexaoController(inserçoes, qtdConexoes *int, callback <-chan int, disponiveis chan<- bool) {
 
 	go func() {
@@ -161,7 +161,7 @@ func conexaoController(inserçoes, qtdConexoes *int, callback <-chan int, dispon
 	}()
 }
 
-// log -------------------------------------------------
+// log 
 func iniciaLog(insertions, connections *int) {
 	go func() {
 		c := time.Tick(time.Second)
