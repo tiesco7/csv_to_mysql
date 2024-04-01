@@ -71,6 +71,28 @@ func main() {
 	id := 1
 	primeiraLinha := true
 
+	for {
+		linhas, err := reader.Read()
+		if err == io.EOF {
+			break
+		}
+
+		if err != nil {
+			log.Fatal(err.Error())
+		}
+
+		if primeiraLinha {
+			parseColunas(linhas, &query)
+			primeiraLinha = false
+
+		} else if <-disponibilidade {
+			conexoes += 1
+			id += 1
+			x.Add(1)
+			go insert(id, query, db, retorno, &conexoes, &x, converte_String_Interface(linhas))
+		}
+	}
+
 	x.Wait()
 
 	decorrido := time.Since(start)
