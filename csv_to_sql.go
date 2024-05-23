@@ -10,7 +10,6 @@ import (
 	"strings"
 	"sync"
 	"time"
-
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -63,7 +62,7 @@ func main() {
 		disponibilidade <- true
 	}
 
-	// log
+	// log de inserções
 	iniciaLog(&insercoes, &conexoes)
 	conexaoController(&insercoes, &conexoes, retorno, disponibilidade)
 
